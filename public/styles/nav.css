@@ -5,6 +5,14 @@ nav {
   color: #FFFFFF;
   padding-left:1.5em;
   padding-right:1.5em;
+  position:fixed;
+  top: 0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+ 
+  
 
 }
 .title{
@@ -13,21 +21,17 @@ nav {
 
 
 .navtext{
-  display:flex;
-  justify-content:right;
-  margin-top:15px;
-  
+
  
 }
 
 .fa-solid{
   font-size:20px;
-  margin-right:70px;
-  color:red;
   display:flex;
-  justify-content: right;
+  justify-content: center;
   
-  margin-top:-28px;
+  color:red;
+  
   
 
 }
