@@ -2,7 +2,7 @@
 display:flex;
 font-weight: 600;
 padding:1.5em;
-background-color:seashell;
+background-color:sandybrown;
 
 
 }
@@ -27,6 +27,7 @@ button{
   border-style:hidden;
   border-bottom: black;
   background-color:seashell;
+  resize:none;
 }
 
 label{
