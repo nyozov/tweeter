@@ -15,6 +15,16 @@ html {
  * Global layout stuff
  */
 
+main {
+  display:flex;
+  background-color: #f4f1ec;
+  width:90%;
+  margin:auto;
+  justify-content: center;
+  border-style:solid;
+  border-color:black;
+}
+
 body {
   color: #545149;
   background-color: #f4f1ec;
