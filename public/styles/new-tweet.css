@@ -1,0 +1,39 @@
+.new-tweet{
+display:flex;
+font-weight: 600;
+padding:1.5em;
+background-color:seashell;
+
+
+}
+
+button{
+  font-family: 'Bungee';
+  color:white;
+  background-color: #4056A1;
+}
+ 
+.form-bottom{
+  display:flex;
+  justify-content: space-between;
+}
+
+#tweet-text{
+  width:100%;
+  padding:5px;
+  margin-top: 10px;
+  outline:none;
+  border-radius: 15px;
+  border-style:hidden;
+  border-bottom: black;
+  background-color:seashell;
+}
+
+label{
+  margin-bottom: 5px;
+}
+
+.fa-kiwi-bird{
+  color: #4056A1;
+  padding-left:10px;
+}
