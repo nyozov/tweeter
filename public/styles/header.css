@@ -1,15 +1,17 @@
-header {
+.profile {
   height: 400px;
   width: 100%;
   display:flex;
   justify-content:center;
   align-items:center;
   flex-direction: column;
-  background-color:lightsteelblue;
+  
   background-image: url("https://transparenttextures.com/patterns/clean-gray-paper.png");
   margin-top:120px;
   border-bottom: solid;
-  border-color:#4056A1;
+  border-color: #4056A1;
   border-width: 15px;
   
 }
+
+

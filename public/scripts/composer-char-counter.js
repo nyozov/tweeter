@@ -9,7 +9,7 @@ $(document).ready(function() {
       $(".new-tweet .counter").css("color", "red");
     
     } else {
-      $(".new-tweet .counter").css("color", "#545149");
+      $(".new-tweet .counter").css("color", "black");
     }
   
   });

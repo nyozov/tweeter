@@ -1,10 +1,10 @@
 .new-tweet{
+  color:black;;
 display:flex;
 font-weight: 600;
 padding:1.5em;
-background-color:sandybrown;
-
-
+background-color: #f2eae9;
+background-image: url("https://transparenttextures.com/patterns/scribble-light.png");
 }
 
 button{
@@ -25,8 +25,9 @@ button{
   outline:none;
   border-radius: 15px;
   border-style:hidden;
-  border-bottom: black;
-  background-color:seashell;
+  
+  
+ 
   resize:none;
 }
 
