@@ -1,77 +1,67 @@
-article{
-  margin-top:15px;
-  
+.tweets article {
+    margin-top: 15px;
+    border-style: solid;
+    border-color: black;
+    background-color: #f2eae9;
+    background-image: url("https://transparenttextures.com/patterns/scribble-light.png");
+    padding: 0.8em;
 }
 
-.tweets article{
-  border-style:solid;
-  border-color:black;
-  background-color: #f2eae9;
-  
-background-image: url("https://transparenttextures.com/patterns/scribble-light.png");
-
-
-  
-  
-  padding:0.8em;
+.tweets article:hover {
+    box-shadow: 5px 5px #4056A1;
 }
 
-.tweets article:hover{
-  box-shadow:5px 5px #4056A1;
-  
-}
-.fa-flag:hover, .fa-heart:hover, .fa-retweet:hover{
-  color:red;
+.fa-flag:hover,
+.fa-heart:hover,
+.fa-retweet:hover {
+    color: red;
 }
 
-.tweets .user{
-  
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  flex-direction:row;
-  
+.tweets .user {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
-.tweets header img{
-  height: 85px;
-  width: auto
+.tweets header img {
+    height: 85px;
+    width: auto
 }
 
-
-
-.tweet-example {
-  padding-left:2em;
-  padding-right:2em;
+.tweet-content {
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
-.tweets footer{
-  font-size:17px;
-  border-top: solid black;
-  display:flex;
-  justify-content: space-between;
-}
-.tweets header label{
-  display:flex;
-  flex-direction: column;
-  align-self: center;
+.tweets footer {
+    font-size: 17px;
+    border-top: solid black;
+    display: flex;
+    justify-content: space-between;
 }
 
-.name-div{
-  display:flex;
-  flex-direction: row;
+.tweets header label {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
 
-.fontawesome-tags{
-  padding-top:1em;
-  color:#4056A1;
+.name-div {
+    display: flex;
+    flex-direction: row;
 }
 
-.user-tag{
-  color:#4056A1;
-  opacity:0.7;
+.fontawesome-tags {
+    padding-top: 1em;
+    color: #4056A1;
 }
-.user-tag:hover{
-  opacity:0.9;
-  
+
+.user-tag {
+    color: #4056A1;
+    opacity: 0.7;
+}
+
+.user-tag:hover {
+    opacity: 0.9;
 }
