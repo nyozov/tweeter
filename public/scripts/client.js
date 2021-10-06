@@ -66,8 +66,10 @@ $(document).ready(function() {
 
 
     const renderTweets = function(tweets) {
+        const $tweetsContainer = $(`#tweets-container`);
+        $tweetsContainer.empty();
         for (let tweet of tweets) {
-            $('#tweets-container').prepend(createTweetElement(tweet));
+            $tweetsContainer.prepend(createTweetElement(tweet));
         }
     };
 
@@ -76,4 +78,24 @@ $(document).ready(function() {
     renderTweets(tweetData);
 
 
+
+
+    $("#tweet-form").submit(function(event) {
+        alert("Handler for .submit() called.");
+        event.preventDefault();
+        const serData = $(this).serialize()
+        $.ajax({
+            url: "/tweets",
+            method: "POST",
+            data: serData,
+
+            error: (err) => {
+                console.log(`there was an error: ${err}`)
+            }
+
+
+        }).then(function() {
+            renderTweets(tweetData)
+        })
+    })
 });
