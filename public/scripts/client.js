@@ -76,8 +76,17 @@ $(document).ready(function() {
 
 
     $("#tweet-form").submit(function(event) {
-        alert("Handler for .submit() called.");
+        console.log("Handler for .submit() called.");
         event.preventDefault();
+
+        let tweetLength = $("#tweet-text").val().length
+        if (tweetLength > 140) {
+            return alert("Your tweet has too many characters")
+        }
+        if (!tweetLength) {
+            return alert("Your tweet is empty")
+        }
+
         const serData = $(this).serialize()
         $.ajax({
                 url: "/tweets",
