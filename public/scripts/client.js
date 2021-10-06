@@ -8,7 +8,11 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
 
-
+    const escape = function(str) {
+        let div = document.createElement("div");
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    };
 
 
 
@@ -24,7 +28,7 @@ $(document).ready(function() {
       <p class="user-tag">${data.user.handle}</p>
 
     </header>
-    <p class="tweet-example">${data.content.text}</p>
+    <p class="tweet-example">${escape(data.content.text)}</p>
     <footer>
       <p>${timeago.format(new Date())}</p>
       <div class="fontawesome-tags">
