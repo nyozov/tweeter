@@ -7,29 +7,7 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
-    const tweetData = [{
-            "user": {
-                "name": "Newton",
-                "avatars": "https://i.imgur.com/73hZDYK.png",
-                "handle": "@SirIsaac"
-            },
-            "content": {
-                "text": "If I have seen further it is by standing on the shoulders of giants"
-            },
-            "created_at": 1461116232227
-        },
-        {
-            "user": {
-                "name": "Descartes",
-                "avatars": "https://i.imgur.com/nlhLi3I.png",
-                "handle": "@rd"
-            },
-            "content": {
-                "text": "Je pense , donc je suis"
-            },
-            "created_at": 1461113959088
-        }
-    ];
+
 
 
 
@@ -74,9 +52,26 @@ $(document).ready(function() {
     };
 
 
-    // Test / driver code (temporary)
-    renderTweets(tweetData);
 
+    const loadTweets = function() {
+        $.ajax({
+            url: "/tweets",
+            method: "GET",
+            dataType: "json",
+            success: (tweets) => {
+                console.log(tweets)
+                renderTweets(tweets)
+
+            },
+            error: (err) => {
+                console.log(`there was an error: ${err}`)
+            }
+
+        })
+
+    }
+
+    loadTweets()
 
 
 
@@ -85,17 +80,21 @@ $(document).ready(function() {
         event.preventDefault();
         const serData = $(this).serialize()
         $.ajax({
-            url: "/tweets",
-            method: "POST",
-            data: serData,
+                url: "/tweets",
+                method: "POST",
+                data: serData,
 
-            error: (err) => {
-                console.log(`there was an error: ${err}`)
-            }
+                error: (err) => {
+                    console.log(`there was an error: ${err}`)
+                }
 
 
-        }).then(function() {
-            renderTweets(tweetData)
-        })
+            })
+            .then(function() {
+                loadTweets()
+            })
     })
+
+
+
 });
