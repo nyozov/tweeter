@@ -13,7 +13,7 @@ $(document).ready(function() {
         div.appendChild(document.createTextNode(str));
         return div.innerHTML;
     };
-
+    
 
     $("#error").hide()
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
     </header>
     <p class="tweet-example">${escape(data.content.text)}</p>
     <footer>
-      <p>${timeago.format(new Date())}</p>
+      <p>${timeago.format(data.created_at)}</p>
       <div class="fontawesome-tags">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
@@ -49,6 +49,7 @@ $(document).ready(function() {
         $tweetsContainer.empty();
         for (let tweet of tweets) {
             $tweetsContainer.prepend(createTweetElement(tweet));
+            console.log(tweet)
         }
     };
 
@@ -92,7 +93,7 @@ $(document).ready(function() {
             return
         }
         $("#error").slideUp()
-
+        
         const serData = $(this).serialize()
         $.ajax({
                 url: "/tweets",
@@ -107,7 +108,9 @@ $(document).ready(function() {
             })
             .then(function() {
                 loadTweets()
+                $("#tweet-text").val('')
             })
+            
     })
 
 
