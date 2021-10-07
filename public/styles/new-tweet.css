@@ -1,55 +1,50 @@
 .new-tweet {
-    margin-top:75px;
-    color: black;
-    ;
-    display: flex;
-    font-weight: 600;
-    padding: 1.5em;
-    background-color: #f2eae9;
-    background-image: url("https://transparenttextures.com/patterns/scribble-light.png");
+  margin-top: 75px;
+  color: black;
+  display: flex;
+  font-weight: 600;
+  padding: 1.5em;
+  background-color: #f2eae9;
+  background-image: url("https://transparenttextures.com/patterns/scribble-light.png");
 }
 
-button {
-    font-family: 'Bungee';
-    color: white;
-    background-color: #4056A1;
+.new-tweet button {
+  font-family: "Bungee";
+  color: white;
+  background-color: #4056a1;
 }
 
 #error {
-    font-size:0.5em;
-    color:#c51244;
+  font-size: 0.5em;
+  color: #c51244;
   padding: 10px;
-  background-color:white;
-  border-style:solid;
-  border-width:0.1em;
-  border-radius: 0 ;
-  border-color:#c51244;
-  position: relative; 
+  background-color: white;
+  border-style: solid;
+  border-width: 0.1em;
+  border-radius: 0;
+  border-color: #c51244;
+  position: relative;
   display: inline-block;
   box-shadow: 1px 1px 1px #aaaaaa;
   margin-top: 10px;
 }
 
-.form-bottom {
-    display: flex;
-    justify-content: space-between;
+#tweet-form .form-bottom {
+  display: flex;
+  justify-content: space-between;
 }
 
 #tweet-text {
-    width: 100%;
-    padding: 5px;
-    margin-top: 10px;
-    outline: none;
-    border-radius: 15px;
-    border-style: hidden;
-    resize: none;
-}
-
-label {
-    margin-bottom: 5px;
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 15px;
+  border-style: hidden;
+  resize: none;
 }
 
 .fa-kiwi-bird {
-    color: #4056A1;
-    padding-left: 10px;
+  color: #4056a1;
+  padding-left: 10px;
 }

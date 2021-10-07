@@ -4,22 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 // Test / driver code (temporary). Eventually will get this from the server.
-$(document).ready(function() {
+$(document).ready(function () {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-    const escape = function(str) {
-        let div = document.createElement("div");
-        div.appendChild(document.createTextNode(str));
-        return div.innerHTML;
-    };
-    
+  $("#error").hide();
 
-    $("#error").hide()
-
-
-    const createTweetElement = function(data) {
-        let $tweet = `<article>
+  const createTweetElement = function (data) {
+    let $tweet = `<article>
     <header class ="user">
       <div class="name-div">
       <img src=${data.user.avatars}> 
@@ -39,80 +35,65 @@ $(document).ready(function() {
     </footer>
   </article>`;
 
-        return $tweet;
+    return $tweet;
+  };
 
-    };
-
-
-    const renderTweets = function(tweets) {
-        const $tweetsContainer = $(`#tweets-container`);
-        $tweetsContainer.empty();
-        for (let tweet of tweets) {
-            $tweetsContainer.prepend(createTweetElement(tweet));
-            console.log(tweet)
-        }
-    };
-
-
-
-    const loadTweets = function() {
-        $.ajax({
-            url: "/tweets",
-            method: "GET",
-            dataType: "json",
-            success: (tweets) => {
-                console.log(tweets)
-                renderTweets(tweets)
-
-            },
-            error: (err) => {
-                console.log(`there was an error: ${err}`)
-            }
-
-        })
-
+  const renderTweets = function (tweets) {
+    const $tweetsContainer = $(`#tweets-container`);
+    $tweetsContainer.empty();
+    for (let tweet of tweets) {
+      $tweetsContainer.prepend(createTweetElement(tweet));
+      console.log(tweet);
     }
+  };
 
-    loadTweets()
+  const loadTweets = function () {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      dataType: "json",
+      success: (tweets) => {
+        console.log(tweets);
+        renderTweets(tweets);
+      },
+      error: (err) => {
+        console.log(`there was an error: ${err}`);
+      },
+    });
+  };
 
+  loadTweets();
 
+  $("#tweet-form").submit(function (event) {
+    console.log("Handler for .submit() called.");
+    event.preventDefault();
 
-    $("#tweet-form").submit(function(event) {
-        console.log("Handler for .submit() called.");
-        event.preventDefault();
+    let tweetLength = $("#tweet-text").val().length;
+    if (tweetLength > 140) {
+      $("#error").text("❗️ Your tweet has too many characters");
+      $("#error").slideDown();
+      return;
+    }
+    if (!tweetLength) {
+      $("#error").text("❗️ Your tweet is empty");
+      $("#error").slideDown();
+      return;
+    }
+    $("#error").slideUp();
 
-        let tweetLength = $("#tweet-text").val().length
-        if (tweetLength > 140) {
-            $("#error").text("❗️ Your tweet has too many characters")
-            $("#error").slideDown()
-            return
-        }
-        if (!tweetLength) {
-            $("#error").text("❗️ Your tweet is empty")
-            $("#error").slideDown()
-            return
-        }
-        $("#error").slideUp()
-        
-        const serData = $(this).serialize()
-        $.ajax({
-                url: "/tweets",
-                method: "POST",
-                data: serData,
+    const serData = $(this).serialize();
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: serData,
 
-                error: (err) => {
-                    console.log(`there was an error: ${err}`)
-                }
-
-
-            })
-            .then(function() {
-                loadTweets()
-                $("#tweet-text").val('')
-            })
-            
-    })
-
-
-
+      error: (err) => {
+        console.log(`there was an error: ${err}`);
+      },
+    }).then(function () {
+      loadTweets();
+      $("#tweet-text").val("");
+      $(".counter").val(140)
+    });
+  });
 });

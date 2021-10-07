@@ -1,33 +1,28 @@
 .profile {
   height: 400px;
   width: 100%;
-  display:flex;
-  
-  justify-content:center;
-  align-items:center;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  
+
   background-image: url("https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-size:cover;
-  background-position:center center;
-  margin-top:120px;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 120px;
   border-bottom: solid;
-  border-color: #4056A1;
+  border-color: #4056a1;
   border-width: 15px;
-  
 }
 
-.profile h2{
-  
-  color:white
+.profile h2 {
+  color: white;
 }
 
-
-@media only screen and (min-width:1024px){
-  .profile{
-    max-width:33.3%;
-    border:hidden;
-    
-    
+@media only screen and (min-width: 1024px) {
+  .profile {
+    max-width: 33.3%;
+    border: hidden;
   }
 }

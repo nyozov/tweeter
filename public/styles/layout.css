@@ -4,15 +4,13 @@
  * Do not modify these two selectors, please
  */
 
-
- 
-
-
 html {
   box-sizing: border-box;
-  
+  scroll-behavior: smooth;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -20,42 +18,36 @@ html {
  * Global layout stuff
  */
 
-
 main {
-  display:flex;
+  display: flex;
   background-color: #f4f1ec;
-  width:90%;
-  margin:auto;
+  width: 90%;
+  margin: auto;
   justify-content: center;
   flex-direction: column;
-  
 }
 
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
-};
+  font-family: "Source Sans Pro", sans-serif;
+}
 
-.mediaQ{
-  display:flex;
+.mediaQ {
+  display: flex;
   flex-direction: column;
 }
 
 @media only screen and (min-width: 1024px) {
-  .mediaQ{
-    display:flex;
+  .mediaQ {
+    display: flex;
     flex-direction: row;
   }
-  main{
-    padding:1em;
+  main {
+    padding: 1em;
   }
-  
 }
-
-
-
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

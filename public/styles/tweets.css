@@ -1,71 +1,80 @@
 .tweets article {
-    
-    margin-top: 15px;
-    border-style: solid;
-    border-color: black;
-    background-color: #f2eae9;
-    background-image: url("https://transparenttextures.com/patterns/scribble-light.png");
-    padding: 0.8em;
+  margin-top: 15px;
+  border-style: solid;
+  border-color: black;
+  background-color: #f2eae9;
+  background-image: url("https://transparenttextures.com/patterns/scribble-light.png");
+  padding: 0.8em;
 }
 
 .tweets article:hover {
-    box-shadow: 5px 5px #4056A1;
+  box-shadow: 5px 5px #4056a1;
 }
 
 .fa-flag:hover,
 .fa-heart:hover,
 .fa-retweet:hover {
-    color: red;
+  color: red;
 }
 
 .tweets .user {
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .tweets header img {
-    height: 85px;
-    width: auto
+  height: 85px;
+  width: auto;
 }
 
 .tweet-content {
-    padding-left: 2em;
-    padding-right: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
-.tweet-example{
-    word-wrap: break-word;
+.tweet-example {
+  word-wrap: break-word;
 }
 
 .tweets footer {
-    font-size: 17px;
-    border-top: solid black;
-    display: flex;
-    justify-content: space-between;
+  font-size: 17px;
+  border-top: solid black;
+  display: flex;
+  justify-content: space-between;
 }
+.tweets label {
+    padding:5px;
+  }
 
 .tweets header label {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
 
 .name-div {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .fontawesome-tags {
-    padding-top: 1em;
-    color: #4056A1;
+  padding-top: 1em;
+  color: #4056a1;
 }
 
 .user-tag {
-    color: #4056A1;
-    opacity: 0.7;
+  color: #4056a1;
+  opacity: 0.7;
 }
 
 .user-tag:hover {
-    opacity: 0.9;
+  opacity: 0.9;
+}
+
+#to-top{
+    position: fixed;
+  bottom: 5px;
+  right: 5px;
+  z-index: 100;
 }
