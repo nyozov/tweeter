@@ -1,4 +1,5 @@
 .tweets article {
+    
     margin-top: 15px;
     border-style: solid;
     border-color: black;
@@ -32,6 +33,9 @@
 .tweet-content {
     padding-left: 2em;
     padding-right: 2em;
+}
+.tweet-example{
+    word-wrap: break-word;
 }
 
 .tweets footer {

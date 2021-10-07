@@ -15,7 +15,7 @@ $(document).ready(function() {
     };
 
 
-
+    $("#error").hide()
 
 
     const createTweetElement = function(data) {
@@ -26,7 +26,6 @@ $(document).ready(function() {
       <label for= "user-img">${data.user.name}</label>
       </div>
       <p class="user-tag">${data.user.handle}</p>
-
     </header>
     <p class="tweet-example">${escape(data.content.text)}</p>
     <footer>
@@ -35,8 +34,6 @@ $(document).ready(function() {
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
         <i class="fa-solid fa-heart"></i>
-
-
       </div>
       
     </footer>
@@ -85,11 +82,16 @@ $(document).ready(function() {
 
         let tweetLength = $("#tweet-text").val().length
         if (tweetLength > 140) {
-            return alert("Your tweet has too many characters")
+            $("#error").text("❗️ Your tweet has too many characters")
+            $("#error").slideDown()
+            return
         }
         if (!tweetLength) {
-            return alert("Your tweet is empty")
+            $("#error").text("❗️ Your tweet is empty")
+            $("#error").slideDown()
+            return
         }
+        $("#error").slideUp()
 
         const serData = $(this).serialize()
         $.ajax({
