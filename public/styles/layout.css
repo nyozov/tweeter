@@ -38,9 +38,11 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+/* 
+ * media query for large screens
+ */
 @media only screen and (min-width: 1024px) {
-  .mediaQ {
+  .mediaQ-div {
     display: flex;
     flex-direction: row;
   }
@@ -49,6 +51,4 @@ body {
   }
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+

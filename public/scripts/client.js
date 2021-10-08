@@ -1,10 +1,6 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+// A client-side Single Page App (SPA)
+// Communicates with a server via AJAX
 
-// Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function () {
   const escape = function (str) {
     let div = document.createElement("div");
@@ -43,7 +39,6 @@ $(document).ready(function () {
     $tweetsContainer.empty();
     for (let tweet of tweets) {
       $tweetsContainer.prepend(createTweetElement(tweet));
-      console.log(tweet);
     }
   };
 
@@ -53,7 +48,6 @@ $(document).ready(function () {
       method: "GET",
       dataType: "json",
       success: (tweets) => {
-        console.log(tweets);
         renderTweets(tweets);
       },
       error: (err) => {
@@ -65,7 +59,6 @@ $(document).ready(function () {
   loadTweets();
 
   $("#tweet-form").submit(function (event) {
-    console.log("Handler for .submit() called.");
     event.preventDefault();
 
     let tweetLength = $("#tweet-text").val().length;
