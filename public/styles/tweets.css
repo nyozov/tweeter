@@ -44,8 +44,8 @@
   justify-content: space-between;
 }
 .tweets label {
-    padding:5px;
-  }
+  padding: 5px;
+}
 
 .tweets header label {
   display: flex;
@@ -72,8 +72,8 @@
   opacity: 0.9;
 }
 
-#to-top{
-    position: fixed;
+#to-top {
+  position: fixed;
   bottom: 5px;
   right: 5px;
   z-index: 100;
